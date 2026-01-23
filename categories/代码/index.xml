@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>代码 on LMye的博客</title>
+    <link>https://lmye001.github.io/categories/%E4%BB%A3%E7%A0%81/</link>
+    <description>Recent content from LMye的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>lmye_001@qq.com (LMye)</managingEditor>
+    <webMaster>lmye_001@qq.com (LMye)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Sun, 11 Jan 2026 11:23:47 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://lmye001.github.io/categories/%E4%BB%A3%E7%A0%81/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>开端-hugo博客搭建-使用reimu主题</title>
+      <link>https://lmye001.github.io/post/software/20260111-first/</link>
+      <pubDate>Sun, 11 Jan 2026 11:23:47 &#43;0800</pubDate>
+      <author>lmye_001@qq.com (LMye)</author>
+      <guid>https://lmye001.github.io/post/software/20260111-first/</guid>
+      <description>
+        <![CDATA[<h1>开端-hugo博客搭建-使用reimu主题</h1><p>作者：LMye（lmye_001@qq.com）</p>
+        
+          <h1 id="开端-hugo博客搭建-使用reimu主题">
+<a class="header-anchor" href="#%e5%bc%80%e7%ab%af-hugo%e5%8d%9a%e5%ae%a2%e6%90%ad%e5%bb%ba-%e4%bd%bf%e7%94%a8reimu%e4%b8%bb%e9%a2%98"></a>
+开端-hugo博客搭建-使用reimu主题
+</h1><h2 id="1安装hugo">
+<a class="header-anchor" href="#1%e5%ae%89%e8%a3%85hugo"></a>
+1、安装hugo
+</h2><p>Windows下手动安装hugo步骤：</p>
+<p><strong>1.1、参考文档</strong></p>
+<p>hugo官方中文文档主页：<a href="https://hugo.opendocs.io/">Hugo官方文档中文版|Hugo中文文档 | Hugo官方文档</a></p>
+        
+        <hr><p>本文2026-01-11首发于<a href='https://lmye001.github.io/'>LMye的博客</a>，最后修改于2026-01-11</p>]]>
+      </description>
+      
+        <category>代码</category>
+      
+    </item>
+    
+  </channel>
+</rss>

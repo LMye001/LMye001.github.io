@@ -1,0 +1,740 @@
+<!doctype html>
+<html
+  lang="zh-CN" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  本安认证电路设计 | LMye
+</title>
+<meta name="description" content="当你感到负重前行时，一定有狗东西在上面享福！"/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://lmye001.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link
+    rel="preload"
+    as="style"
+    crossorigin
+    href="https://fontsapi.zeoseven.com/292/main/result.css"
+    onload="this.rel='stylesheet'"
+  /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.14df05c02c63459533ffcbb5e07f8ba38b8a4eed13a1e5c3b19d3045491c4e2a.css" /><meta property="og:type" content="website" />
+  <meta property="og:title" content="本安认证电路设计 | LMye" />
+  <meta
+    property="og:description"
+    content="当你感到负重前行时，一定有狗东西在上面享福！"
+  />
+  <meta property="og:url" content="https://lmye001.github.io/post/hardware/hardware-03/" />
+  <meta
+    property="og:site_name"
+    content="LMye的博客"
+  />
+  <meta
+    property="og:image"
+    content="/"
+  />
+  <meta property="article:author" content="LMye" />
+  <meta property="article:published_time" content="2026-01-22T16:02:00&#43;08:00" />
+  <meta property="article:modified_time" content="2026-01-22T16:02:00&#43;08:00" /><meta property="article:tag" content="硬件电路本安" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/" />
+
+
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.68c569684fda1df8f04a0cb83be27993f3d26b341df231121c2b0c23adb61742.css" /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    
+    
+    
+    
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">加载中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/"><div class='main-nav-icon icon '><img src="/images/logo/home-svg.svg" alt="home icon" class="" style="height: 1em;"></div><span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives"><div class='main-nav-icon icon '><img src="/images/logo/archives-svg.svg" alt="archives icon" class="" style="height: 1em;"></div><span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/weblink"><div class='main-nav-icon icon '><img src="/images/logo/weblink-svg.svg" alt="weblink icon" class="" style="height: 1em;"></div><span class="main-nav-link">导航</span>
+      </a><a class="main-nav-link-wrap" href="/tools"><div class='main-nav-icon icon '><img src="/images/logo/tools-svg.svg" alt="tools icon" class="" style="height: 1em;"></div><span class="main-nav-link">工具</span>
+      </a><a class="main-nav-link-wrap" href="/friend"><div class='main-nav-icon icon '><img src="/images/logo/friend-svg.svg" alt="friend icon" class="" style="height: 1em;"></div><span class="main-nav-link">友链</span>
+      </a><a class="main-nav-link-wrap" href="/game"><div class='main-nav-icon icon '><img src="/images/logo/game-svg.svg" alt="game icon" class="" style="height: 1em;"></div><span class="main-nav-link">游戏</span>
+      </a><a class="main-nav-link-wrap" href="/about"><div class='main-nav-icon icon '><img src="/images/logo/about-svg.svg" alt="about icon" class="" style="height: 1em;"></div><span class="main-nav-link">关于</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a></nav></div>
+<header id="header" aria-label="Site header"><picture></picture><img  fetchpriority="high" src="/images/banner.webp" alt="本安认证电路设计"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">本安认证电路设计</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          class="sidebar-left"
+            ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#本安认证电路设计">本安认证电路设计</a>
+      <ul>
+        <li><a href="#1电源设计上的电容要求">1、电源设计上的电容要求</a></li>
+        <li><a href="#2电源设计上的限压限流">2、电源设计上的限压限流</a></li>
+        <li><a href="#3火花测试">3、火花测试</a></li>
+        <li><a href="#4绝缘耐压">4、绝缘耐压</a></li>
+        <li><a href="#5漏电流">5、漏电流</a></li>
+        <li><a href="#6输出信号限压">6、输出信号限压</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/lin.webp"
+    data-sizes="auto"
+    alt="LMye"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">LMye</div>
+  <div class="sidebar-description">当你感到负重前行时，一定有狗东西在上面享福！</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">21</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      4
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">9</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/home-svg.svg" alt="home icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/archives-svg.svg" alt="archives icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/weblink"
+        aria-label="导航"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/weblink-svg.svg" alt="weblink icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">导航</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/tools"
+        aria-label="工具"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/tools-svg.svg" alt="tools icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">工具</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/friend-svg.svg" alt="friend icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">友链</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/game"
+        aria-label="游戏"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/game-svg.svg" alt="game icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">游戏</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/about-svg.svg" alt="about icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">关于</div>
+    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2026-01-22 16:02:00 &#43;0800 CST" itemprop="datePublished"
+      >2026-01-22</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2026-01-22</time
+    >
+  </span></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h2 id="本安认证电路设计">
+<a class="header-anchor" href="#%e6%9c%ac%e5%ae%89%e8%ae%a4%e8%af%81%e7%94%b5%e8%b7%af%e8%ae%be%e8%ae%a1"></a>
+本安认证电路设计
+</h2><h3 id="1电源设计上的电容要求">
+<a class="header-anchor" href="#1%e7%94%b5%e6%ba%90%e8%ae%be%e8%ae%a1%e4%b8%8a%e7%9a%84%e7%94%b5%e5%ae%b9%e8%a6%81%e6%b1%82"></a>
+1、电源设计上的电容要求
+</h3><p>参考GB/T 3836.4 的表A.2 电压和设备类别相对应的允许电容</p>
+<p><img src="/post/hardware/hardware-03/images/Pasted%20image%2020260122085732.png" alt=""></p>
+<p>Ⅰ类设备，额定输入电压12V时，1.5倍安全系数时的电容限值为38uF。</p>
+<p><img src="/post/hardware/hardware-03/images/Pasted%20image%2020260122085952.png" alt=""></p>
+<p>设备内部存在12V升压到22V的升压电路，留有余量的情况下，按24V算，允许电容为5.25uF</p>
+<p><img src="/post/hardware/hardware-03/images/Pasted%20image%2020260122090141.png" alt=""></p>
+<p>设备内部还存在12V转5V，转3.3V，5V转1.8V，1.5V，1.2V等等各种低压电路，按这个表算，这些低电压的电源部分，无需对电容进行限制。</p>
+<h3 id="2电源设计上的限压限流">
+<a class="header-anchor" href="#2%e7%94%b5%e6%ba%90%e8%ae%be%e8%ae%a1%e4%b8%8a%e7%9a%84%e9%99%90%e5%8e%8b%e9%99%90%e6%b5%81"></a>
+2、电源设计上的限压限流
+</h3><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">12V------升压-----22V
+</span></span><span class="line"><span class="cl">	│
+</span></span><span class="line"><span class="cl">	│-----降压-----5V
+</span></span><span class="line"><span class="cl">	│              │
+</span></span><span class="line"><span class="cl">	│              │-----3.3V
+</span></span><span class="line"><span class="cl">	│              │
+</span></span><span class="line"><span class="cl">	│              │-----1.8V
+</span></span><span class="line"><span class="cl">	│              │
+</span></span><span class="line"><span class="cl">	│              │-----1.5V
+</span></span><span class="line"><span class="cl">	│              │
+</span></span><span class="line"><span class="cl">	│              │-----1.2V
+</span></span><span class="line"><span class="cl">	│              │
+</span></span><span class="line"><span class="cl">	│              ……
+</span></span><span class="line"><span class="cl">	│
+</span></span><span class="line"><span class="cl">	│-----降压-----3.3V
+</span></span></code></pre></div><ul>
+<li>12V电容不超过38uF</li>
+<li>22V电容不超过5.25uF</li>
+<li>5V和3.3V以及后级的更低电压的电源电容不做限制</li>
+</ul>
+<p><strong>这里需要考虑另外一个点，如果降压芯片损坏，后级电源与前级12V短路怎么办？</strong></p>
+<p>例如，如果5V和12V短路，5V上的电容就直接加在了12V上，由于5V没做电容容值限制，这时候12V的电容会明显超标。因此需要在12V的两个降压电路后级，也就是5V和3.3V上增加<strong>限压电路</strong>。</p>
+<p>升压电路同理也要先加限压电路，还有另外一点，由于升压电路的拓扑结构（12V到22V之间有个正向的二极管），决定了<strong>升压电路后级的所有电容，需要被计算在前级的12V上</strong>。所以计算12V电源网络上的电容时，要将22V电源上的电容一同加上。</p>
+<hr>
+<p>参考GB/T 3836.4 的表A.1 电压和设备类别相对应的允许短路电流</p>
+<p><img src="/post/hardware/hardware-03/images/Pasted%20image%2020260122092311.png" alt="">
+<img src="/post/hardware/hardware-03/images/Pasted%20image%2020260122092213.png" alt="">
+<img src="/post/hardware/hardware-03/images/Pasted%20image%2020260122092413.png" alt=""></p>
+<p>12V及以下没有相关要求，因此，仅需对升压电路做限流限制。实际使用22V，我们是按24V标准设计的，因此按24V限流704.7mA设计限流即可。</p>
+<p>本安认证代理方给的建议是，在国标限值的基础上再留有余量，基本上就是再砍半。标准700mA限流，就只做350mA限流；标准限定38uF，实际限值到19uF。这样能保证通过测试，如果影响到性能，到时候测试的时候根据情况再增加电容测试。</p>
+<h3 id="3火花测试">
+<a class="header-anchor" href="#3%e7%81%ab%e8%8a%b1%e6%b5%8b%e8%af%95"></a>
+3、火花测试
+</h3><p>本安火花测试，以22V为例。</p>
+<ul>
+<li>
+<p>将22V的电源和地飞线拉出来，接入火花机进行短路测试，若能点燃混合气体意味着测试失败。</p>
+</li>
+<li>
+<p>将22V电源在板上找地方切断，切断的两边飞线出来接入火花机进行短路测试，若能点燃混合气体意味着测试失败。（所以电源上最好预留一个串接电阻，方便取下来飞线测试）</p>
+</li>
+</ul>
+<p>有一点比较坑的是，短路测试触电是在火花机转盘上，转盘转速虽然可调，但基本上也都在80r/min左右，并且会用示波器监测这个电压值。也就是说，<strong>这个电压在短路之后进入保护状态，再恢复电压输出的这个时间不能太长，基本上要保证100ms以内可以恢复</strong>。我最开始做的限流保护，是限流后断开，如果需要恢复的话，必须要断电重启，这种方式理论上来说是更加安全的，但是本安测试不行，必须连续不断触发限流，保证不会打火点燃气体。</p>
+<p><img src="/post/hardware/hardware-03/images/Pasted%20image%2020260122094117.png" alt=""></p>
+<h3 id="4绝缘耐压">
+<a class="header-anchor" href="#4%e7%bb%9d%e7%bc%98%e8%80%90%e5%8e%8b"></a>
+4、绝缘耐压
+</h3><p>使用绝缘电阻表，测试外壳地与电源、地、信号之间的绝缘电阻，要求大于10M。</p>
+<p>这里使用的是绝缘电阻表，而不是万用表。我手上的绝缘电阻表是摇表，要求是120r/ min的速度摇把手，看指针所指的电阻是多少。</p>
+<ul>
+<li>如果电路上有设计G和GND之间加1M或者10M电阻，是明显不能通过测试的。<strong>解决办法就是去掉这些电阻。</strong></li>
+<li>如果PCB板上表层铺铜了、走线了、打过孔了，然后这些地方与金属结构有贴合，也就是说板内铜箔和外壳G之间，只有一层薄薄的PCB绿油隔开，这种情况也是测不过的，可以看到明显的闪络。<strong>临时解决办法就是，贴一层高温胶带；根本解决办法就是，PCB设计时避开结构这些地方</strong>。</li>
+</ul>
+<p><img src="/post/hardware/hardware-03/images/Pasted%20image%2020260122094509.png" alt=""></p>
+<h3 id="5漏电流">
+<a class="header-anchor" href="#5%e6%bc%8f%e7%94%b5%e6%b5%81"></a>
+5、漏电流
+</h3><p>使用专门的漏电流测试仪器测试，电压设置500V，漏电流设置5mA，超过5mA为测试不通过。一端夹外壳地，另一端夹电源、地、信号等。</p>
+<p>这个测试和上面的绝缘电阻很相关，如果上面的绝缘电阻测试ok，这一项基本没问题。</p>
+<p>但是有一点，如果电路上有和G之间的电容，绝缘电阻没问题，但是漏电流会测不过。</p>
+<p>简便评估办法：</p>
+$$Ic=\frac{V}{Xc}$$<p>
+其中：
+</p>
+$$Xc=\frac{1}{2 \pi fC}$$<p>
+带入计算在500V，50Hz，5mA要求下，C大概为31nF。</p>
+<h3 id="6输出信号限压">
+<a class="header-anchor" href="#6%e8%be%93%e5%87%ba%e4%bf%a1%e5%8f%b7%e9%99%90%e5%8e%8b"></a>
+6、输出信号限压
+</h3><p>输出信号需要限压，这个设备输出只有一个百兆网口，正常来说，网口在网变内侧的信号上做好限压，由于网变匝比是1：1，输出就是对应限制在电压内的。<strong>但是</strong>代理要求在网变外侧，也就是网变到RJ45侧的信号，增加对板内GND的5V稳压管，限流电阻，保险丝🙃。</p>
+<p>我曾据理力争过，但是迫于强权，不得已加上了稳压管。网变的隔离作用完全被破坏，相关的防护也会失效，外部干扰可以直接进入板内，导致在强干扰环境下网络丢包及其严重。</p>
+<p>目前这一部分还没有找到好的解决办法，网上查到的专利里面的电路，也被代理否了🙃。</p>
+</div>
+    <footer class="article-footer"><blockquote class="article-copyright"><p><strong><span class="icon-user icon"></span>本文作者：</strong>LMye</p><p>
+      <strong><span class="icon-link icon"></span>本文链接：</strong><a href="https://lmye001.github.io/post/hardware/hardware-03/">https://lmye001.github.io/post/hardware/hardware-03/</a>
+    </p><p><strong><span class="icon-pencil icon"></span>本文标题：</strong>本安认证电路设计</p><p><strong><span class="icon-calendar icon"></span>本文发布时间：</strong>2026-01-22 16:02:00</p><p>
+      
+      <strong><span class="icon-copyright icon"></span>本文版权：</strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener nofollow noreferrer" target="_blank"><span class="icon-creative-commons"></span>BY-NC-SA</a> 许可协议。转载请注明出处！
+    </p>
+    <span class="icon-creative-commons article-copyright-bg"></span></blockquote>
+<ul class="article-category-list"><li class="article-tag-list-item" data-aos="zoom-in">
+    <a
+      class="article-category-link"
+      href="/categories/%e5%b7%a5%e4%bd%9c"
+      data-aos="zoom-in"
+      >工作</a
+    >
+    </li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e7%a1%ac%e4%bb%b6"
+        rel="tag"
+        >硬件</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e7%94%b5%e8%b7%af"
+        rel="tag"
+        >电路</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e6%9c%ac%e5%ae%89"
+        rel="tag"
+        >本安</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+              data-src="https://i.ibb.co/6cNpc8W2/5.webp"
+              data-sizes="auto"
+              alt="网口浪涌防护电路"
+              class="lazyload"
+            /><a
+          href="/post/hardware/hardware-02/"
+          aria-label="前一篇:网口浪涌防护电路"
+          title="前一篇:网口浪涌防护电路"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">网口浪涌防护电路</h3>
+      </div><div class="article-nav-link-wrap right"><img
+              data-src="https://i.ibb.co/vvrHNKgb/2.webp"
+              data-sizes="auto"
+              alt="记一次网络丢包问题排查"
+              class="lazyload"
+            /><a
+          href="/post/hardware/hardware-04/"
+          aria-label="后一篇:记一次网络丢包问题排查"
+          title="后一篇:记一次网络丢包问题排查"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">记一次网络丢包问题排查</h3>
+      </div></nav></article></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2026<span class="footer-info-sep rotate"></span>LMye
+    </div><div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Hugo</a
+        >&nbsp;Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;30.3k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;01:10</span>
+      </div><div class="footer-beian">
+        <img
+          style="object-fit: contain;margin-right: 2px;"
+          src="https://icp.gov.moe/images/ico64.png"
+          alt=""
+          width="24"
+          height="24"
+        />
+        <a
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          href="https://icp.gov.moe/?keyword=20268686"
+          >萌ICP备20268686号</a
+        >
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#本安认证电路设计">本安认证电路设计</a>
+      <ul>
+        <li><a href="#1电源设计上的电容要求">1、电源设计上的电容要求</a></li>
+        <li><a href="#2电源设计上的限压限流">2、电源设计上的限压限流</a></li>
+        <li><a href="#3火花测试">3、火花测试</a></li>
+        <li><a href="#4绝缘耐压">4、绝缘耐压</a></li>
+        <li><a href="#5漏电流">5、漏电流</a></li>
+        <li><a href="#6输出信号限压">6、输出信号限压</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/lin.webp"
+    data-sizes="auto"
+    alt="LMye"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">LMye</div>
+  <div class="sidebar-description">当你感到负重前行时，一定有狗东西在上面享福！</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">21</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      4
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">9</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/home-svg.svg" alt="home icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/archives-svg.svg" alt="archives icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/weblink"
+        aria-label="导航"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/weblink-svg.svg" alt="weblink icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">导航</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/tools"
+        aria-label="工具"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/tools-svg.svg" alt="tools icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">工具</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/friend-svg.svg" alt="friend icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">友链</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/game"
+        aria-label="游戏"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/game-svg.svg" alt="game icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">游戏</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/about-svg.svg" alt="about icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">关于</div>
+    </div></div></div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><script
+    src="/resources/lazysizes@5.3.2/lazysizes.min.js"
+    
+    
+    
+    
+    ></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    
+    
+    
+    
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous"  ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous"  ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax ></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "0SSY7ZBOI8",
+        apiKey: "0c084014dfbfe2cd97bf954df0eab235",
+        indexName: "lmye_blog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="/resources/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    defer
+    
+    
+    
+    ></script><script
+    src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
+    defer
+    
+    
+    
+    integrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous"  ></script><script>
+  var setupFirework = () => {
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.firework) {
+        const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+        options.excludeElements = options.excludeelements;
+        delete options.excludeelements;
+        window.firework(options);
+      }
+    }
+  }
+</script><script
+    src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js"
+    defer
+    
+    
+    onload="setupFirework()"
+    integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8&#43;pUoWX8n1rgq282T" crossorigin="anonymous"></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "LMye",
+          title: "本安认证电路设计",
+          url: "https:\/\/lmye001.github.io\/post\/hardware\/hardware-03\/",
+          description: " 本安认证电路设计 1、电源设计上的电容要求 参考GB\/T 3836.4 的表A.2 电压和设备类别相对应的允许电容\nⅠ类设备，额定输入电压12V时，1.5倍安全系数时的电容限值为38uF。\n",
+          cover: "https:\/\/lmye001.github.io\/images\/banner.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax ></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script><script
+    src="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.js"
+    
+    
+    data-pjax
+    
+    integrity="sha384-MWNUH0WmtsYGhn2cbH6ELRCbf9LG3QDqCC&#43;gqPB3IBNO35xjZK3Ejb6oONRpDbPg" crossorigin="anonymous"></script><script
+    src="https://npm.webcache.cn/katex@0.16.24/dist/contrib/auto-render.min.js"
+    
+    
+    data-pjax
+    
+    integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv&#43;fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"></script><script data-pjax>
+          var renderMath = () => {
+            if (!window.renderMathInElement) return;
+            window.renderMathInElement(_$("article"), {
+              delimiters: [
+                { left: "$$", right: "$$", display: true },
+                { left: "\\[", right: "\\]", display: true },
+                { left: "$", right: "$", display: false },
+                { left: "\\(", right: "\\)", display: false },
+              ],
+            });
+          };
+          if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", renderMath, { once: true });
+          } else {
+            renderMath();
+          }
+        </script></div>
+</div><script
+    src="/resources/busuanzi@3.6.9/busuanzi.min.js"
+    
+    async
+    
+    
+    ></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script></body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>丢包 on LMye的博客</title>
+    <link>https://lmye001.github.io/tags/%E4%B8%A2%E5%8C%85/</link>
+    <description>Recent content from LMye的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>lmye_001@qq.com (LMye)</managingEditor>
+    <webMaster>lmye_001@qq.com (LMye)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Fri, 23 Jan 2026 16:02:00 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://lmye001.github.io/tags/%E4%B8%A2%E5%8C%85/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>记一次网络丢包问题排查</title>
+      <link>https://lmye001.github.io/post/hardware/hardware-04/</link>
+      <pubDate>Fri, 23 Jan 2026 16:02:00 &#43;0800</pubDate>
+      <author>lmye_001@qq.com (LMye)</author>
+      <guid>https://lmye001.github.io/post/hardware/hardware-04/</guid>
+      <description>
+        <![CDATA[<h1>记一次网络丢包问题排查</h1><p>作者：LMye（lmye_001@qq.com）</p>
+        
+          <h2 id="记一次网络丢包问题排查">
+<a class="header-anchor" href="#%e8%ae%b0%e4%b8%80%e6%ac%a1%e7%bd%91%e7%bb%9c%e4%b8%a2%e5%8c%85%e9%97%ae%e9%a2%98%e6%8e%92%e6%9f%a5"></a>
+记一次网络丢包问题排查
+</h2><p>初次收到的问题反馈为：部分机器（一半）丢包比较严重。</p>
+<p>开玩笑？我这个PHY调过的，测过丢包和高低温的，怎么可能有问题！</p>
+<h3 id="1替换法排查">
+<a class="header-anchor" href="#1%e6%9b%bf%e6%8d%a2%e6%b3%95%e6%8e%92%e6%9f%a5"></a>
+1、替换法排查
+</h3><ul>
+<li>测试新产的机器，所谓不丢包的机器我测的时候也丢包。</li>
+<li>拿我手上以前留下来的自己用的裸板进行丢包测试，正常，基本上不丢包。</li>
+<li>拿我手上的网络板替换机器上的网络板，丢包——排除网络板的问题。</li>
+<li>拿我手上的主板替换机器上的主板，不丢包——主板问题。</li>
+</ul>
+<h3 id="2常规排查">
+<a class="header-anchor" href="#2%e5%b8%b8%e8%a7%84%e6%8e%92%e6%9f%a5"></a>
+2、常规排查
+</h3><ul>
+<li>排查PHY部分电路的几个电源电压、纹波情况</li>
+<li>排查PHY部分电路的上电时序</li>
+<li>排查RGMII信号质量</li>
+</ul>
+<p>由于上面替换法排除了PHY部分电路的问题，这几个可以不用查，直接查主板问题。（应不是干硬件的领导的要求，还是测了这些信号🙃）</p>
+        
+        <hr><p>本文2026-01-23首发于<a href='https://lmye001.github.io/'>LMye的博客</a>，最后修改于2026-01-23</p>]]>
+      </description>
+      
+        <category>工作</category>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>浪涌 on LMye的博客</title>
+    <link>https://lmye001.github.io/tags/%E6%B5%AA%E6%B6%8C/</link>
+    <description>Recent content from LMye的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>lmye_001@qq.com (LMye)</managingEditor>
+    <webMaster>lmye_001@qq.com (LMye)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Wed, 21 Jan 2026 18:02:00 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://lmye001.github.io/tags/%E6%B5%AA%E6%B6%8C/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>网口浪涌防护电路</title>
+      <link>https://lmye001.github.io/post/hardware/hardware-02/</link>
+      <pubDate>Wed, 21 Jan 2026 18:02:00 &#43;0800</pubDate>
+      <author>lmye_001@qq.com (LMye)</author>
+      <guid>https://lmye001.github.io/post/hardware/hardware-02/</guid>
+      <description>
+        <![CDATA[<h1>网口浪涌防护电路</h1><p>作者：LMye（lmye_001@qq.com）</p>
+        
+          <h2 id="网口浪涌防护电路">
+<a class="header-anchor" href="#%e7%bd%91%e5%8f%a3%e6%b5%aa%e6%b6%8c%e9%98%b2%e6%8a%a4%e7%94%b5%e8%b7%af"></a>
+网口浪涌防护电路
+</h2><p>一般以太网电路，网络变压器左侧差分信号接PHY芯片，右侧差分信号接外部RJ45端。</p>
+<p><img src="/post/hardware/hardware-02/images/Pasted%20image%2020260121190937.png" alt=""></p>
+<h3 id="1共模防护">
+<a class="header-anchor" href="#1%e5%85%b1%e6%a8%a1%e9%98%b2%e6%8a%a4"></a>
+1、共模防护
+</h3><p>上面网络变压器右侧的75R电阻和1nF电容电路，叫做Bob-Smith电路，浪涌事件存在于信号线到G之间时，信号线上的浪涌能量通过网变的中心抽头，再经过75R电阻和1nF电容到G。这个Bob-Smith电路主要就是作为浪涌的共模防护。</p>
+        
+        <hr><p>本文2026-01-21首发于<a href='https://lmye001.github.io/'>LMye的博客</a>，最后修改于2026-01-21</p>]]>
+      </description>
+      
+        <category>工作</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>直流电源浪涌防护经验</title>
+      <link>https://lmye001.github.io/post/hardware/hardware-01/</link>
+      <pubDate>Wed, 21 Jan 2026 16:02:00 &#43;0800</pubDate>
+      <author>lmye_001@qq.com (LMye)</author>
+      <guid>https://lmye001.github.io/post/hardware/hardware-01/</guid>
+      <description>
+        <![CDATA[<h1>直流电源浪涌防护经验</h1><p>作者：LMye（lmye_001@qq.com）</p>
+        
+          <h2 id="直流电源浪涌防护经验">
+<a class="header-anchor" href="#%e7%9b%b4%e6%b5%81%e7%94%b5%e6%ba%90%e6%b5%aa%e6%b6%8c%e9%98%b2%e6%8a%a4%e7%bb%8f%e9%aa%8c"></a>
+直流电源浪涌防护经验
+</h2><p>有款产品应用场景为工业场景，原本默认是输入12V，但客户环境通常希望接入24V电源。因此电源口浪涌防护按24V标准做测试。</p>
+        
+        <hr><p>本文2026-01-21首发于<a href='https://lmye001.github.io/'>LMye的博客</a>，最后修改于2026-01-21</p>]]>
+      </description>
+      
+        <category>工作</category>
+      
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>本安 on LMye的博客</title>
+    <link>https://lmye001.github.io/tags/%E6%9C%AC%E5%AE%89/</link>
+    <description>Recent content from LMye的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>lmye_001@qq.com (LMye)</managingEditor>
+    <webMaster>lmye_001@qq.com (LMye)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Thu, 22 Jan 2026 16:02:00 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://lmye001.github.io/tags/%E6%9C%AC%E5%AE%89/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>本安认证电路设计</title>
+      <link>https://lmye001.github.io/post/hardware/hardware-03/</link>
+      <pubDate>Thu, 22 Jan 2026 16:02:00 &#43;0800</pubDate>
+      <author>lmye_001@qq.com (LMye)</author>
+      <guid>https://lmye001.github.io/post/hardware/hardware-03/</guid>
+      <description>
+        <![CDATA[<h1>本安认证电路设计</h1><p>作者：LMye（lmye_001@qq.com）</p>
+        
+          <h2 id="本安认证电路设计">
+<a class="header-anchor" href="#%e6%9c%ac%e5%ae%89%e8%ae%a4%e8%af%81%e7%94%b5%e8%b7%af%e8%ae%be%e8%ae%a1"></a>
+本安认证电路设计
+</h2><h3 id="1电源设计上的电容要求">
+<a class="header-anchor" href="#1%e7%94%b5%e6%ba%90%e8%ae%be%e8%ae%a1%e4%b8%8a%e7%9a%84%e7%94%b5%e5%ae%b9%e8%a6%81%e6%b1%82"></a>
+1、电源设计上的电容要求
+</h3><p>参考GB/T 3836.4 的表A.2 电压和设备类别相对应的允许电容</p>
+<p><img src="/post/hardware/hardware-03/images/Pasted%20image%2020260122085732.png" alt=""></p>
+<p>Ⅰ类设备，额定输入电压12V时，1.5倍安全系数时的电容限值为38uF。</p>
+        
+        <hr><p>本文2026-01-22首发于<a href='https://lmye001.github.io/'>LMye的博客</a>，最后修改于2026-01-22</p>]]>
+      </description>
+      
+        <category>工作</category>
+      
+    </item>
+    
+  </channel>
+</rss>

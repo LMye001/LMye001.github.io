@@ -1,0 +1,663 @@
+<!doctype html>
+<html
+  lang="zh-CN" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  直流电源浪涌防护经验 | LMye
+</title>
+<meta name="description" content="当你感到负重前行时，一定有狗东西在上面享福！"/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://lmye001.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link
+    rel="preload"
+    as="style"
+    crossorigin
+    href="https://fontsapi.zeoseven.com/292/main/result.css"
+    onload="this.rel='stylesheet'"
+  /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.14df05c02c63459533ffcbb5e07f8ba38b8a4eed13a1e5c3b19d3045491c4e2a.css" /><meta property="og:type" content="website" />
+  <meta property="og:title" content="直流电源浪涌防护经验 | LMye" />
+  <meta
+    property="og:description"
+    content="当你感到负重前行时，一定有狗东西在上面享福！"
+  />
+  <meta property="og:url" content="https://lmye001.github.io/post/hardware/hardware-01/" />
+  <meta
+    property="og:site_name"
+    content="LMye的博客"
+  />
+  <meta
+    property="og:image"
+    content="/"
+  />
+  <meta property="article:author" content="LMye" />
+  <meta property="article:published_time" content="2026-01-21T16:02:00&#43;08:00" />
+  <meta property="article:modified_time" content="2026-01-21T16:02:00&#43;08:00" /><meta property="article:tag" content="硬件浪涌电路" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/" />
+
+
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.68c569684fda1df8f04a0cb83be27993f3d26b341df231121c2b0c23adb61742.css" /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    
+    
+    
+    
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">加载中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/"><div class='main-nav-icon icon '><img src="/images/logo/home-svg.svg" alt="home icon" class="" style="height: 1em;"></div><span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives"><div class='main-nav-icon icon '><img src="/images/logo/archives-svg.svg" alt="archives icon" class="" style="height: 1em;"></div><span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/weblink"><div class='main-nav-icon icon '><img src="/images/logo/weblink-svg.svg" alt="weblink icon" class="" style="height: 1em;"></div><span class="main-nav-link">导航</span>
+      </a><a class="main-nav-link-wrap" href="/tools"><div class='main-nav-icon icon '><img src="/images/logo/tools-svg.svg" alt="tools icon" class="" style="height: 1em;"></div><span class="main-nav-link">工具</span>
+      </a><a class="main-nav-link-wrap" href="/friend"><div class='main-nav-icon icon '><img src="/images/logo/friend-svg.svg" alt="friend icon" class="" style="height: 1em;"></div><span class="main-nav-link">友链</span>
+      </a><a class="main-nav-link-wrap" href="/game"><div class='main-nav-icon icon '><img src="/images/logo/game-svg.svg" alt="game icon" class="" style="height: 1em;"></div><span class="main-nav-link">游戏</span>
+      </a><a class="main-nav-link-wrap" href="/about"><div class='main-nav-icon icon '><img src="/images/logo/about-svg.svg" alt="about icon" class="" style="height: 1em;"></div><span class="main-nav-link">关于</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a></nav></div>
+<header id="header" aria-label="Site header"><picture></picture><img  fetchpriority="high" src="/images/banner.webp" alt="直流电源浪涌防护经验"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">直流电源浪涌防护经验</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          class="sidebar-left"
+            ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#直流电源浪涌防护经验">直流电源浪涌防护经验</a>
+      <ul>
+        <li><a href="#1错误防护">1、错误防护</a></li>
+        <li><a href="#2错误防护">2、错误防护</a></li>
+        <li><a href="#3正确防护">3、正确防护</a></li>
+        <li><a href="#4其他问题">4、其他问题</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/lin.webp"
+    data-sizes="auto"
+    alt="LMye"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">LMye</div>
+  <div class="sidebar-description">当你感到负重前行时，一定有狗东西在上面享福！</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">21</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      4
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">9</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/home-svg.svg" alt="home icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/archives-svg.svg" alt="archives icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/weblink"
+        aria-label="导航"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/weblink-svg.svg" alt="weblink icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">导航</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/tools"
+        aria-label="工具"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/tools-svg.svg" alt="tools icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">工具</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/friend-svg.svg" alt="friend icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">友链</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/game"
+        aria-label="游戏"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/game-svg.svg" alt="game icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">游戏</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/about-svg.svg" alt="about icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">关于</div>
+    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2026-01-21 16:02:00 &#43;0800 CST" itemprop="datePublished"
+      >2026-01-21</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2026-01-21</time
+    >
+  </span></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h2 id="直流电源浪涌防护经验">
+<a class="header-anchor" href="#%e7%9b%b4%e6%b5%81%e7%94%b5%e6%ba%90%e6%b5%aa%e6%b6%8c%e9%98%b2%e6%8a%a4%e7%bb%8f%e9%aa%8c"></a>
+直流电源浪涌防护经验
+</h2><p>有款产品应用场景为工业场景，原本默认是输入12V，但客户环境通常希望接入24V电源。因此电源口浪涌防护按24V标准做测试。</p>
+<h3 id="1错误防护">
+<a class="header-anchor" href="#1%e9%94%99%e8%af%af%e9%98%b2%e6%8a%a4"></a>
+1、错误防护
+</h3><p><strong>公司祖传的直流电源入口处的电路图如下：</strong></p>
+<p><img src="/post/hardware/hardware-01/images/Pasted%20image%2020260121181432.png" alt=""></p>
+<p>这个电路中，D3二极管作用是防反接。D6是TVS管，可以吸收静电和浪涌能量。B1为气体放电管，也是作为浪涌防护器件。L4电感在此处的作用，只能看作是电源滤波，可能还有B1和D6之间的解耦功能。</p>
+<p>其中明显的错误点是，<strong>B1气体放电管的接法不对</strong>，气体放电管有个参数叫弧光电压（Arc Voltage），这个型号的气体放电管的弧光电压约为15V。</p>
+<p><img src="/post/hardware/hardware-01/images/Pasted%20image%2020260121183130.png" alt=""></p>
+<p>在浪涌测试时，会有一个高压施加在气体放电管上，气体放电管击穿放电，可以看到放电管中间区域放电发光。而当放电管击穿放电时，只需要两端维持住15V，这个电压就可以维持放电管持续弧光放电。而我们的24V电源明显超过这个参数，因此，这里的接法不正确，这种接法可以用在信号线上，用在低压电源上，但是不能用在24V电源上。这个气体放电管可以放在板内GND和外壳屏蔽G之间，测试共模浪涌时有用。</p>
+<h3 id="2错误防护">
+<a class="header-anchor" href="#2%e9%94%99%e8%af%af%e9%98%b2%e6%8a%a4"></a>
+2、错误防护
+</h3><p><strong>测试时修改的错误防护电路：</strong></p>
+<p><img src="/post/hardware/hardware-01/images/Pasted%20image%2020260121183711.png" alt=""></p>
+<p>对比之前的防护电路，新加了压敏电阻和保险丝（保险丝实测的时候没加），但实际测试无法正常防护，后级DCDC会损坏。</p>
+<p>其原因在于<strong>L1电感的位置不正确</strong>，L1电感的作用是解耦合，电源进来先过一遍压敏电阻，通过电感解耦合之后，再通过TVS吸收剩余的超额能量，电感应该在压敏和TVS之间。并且感值选大一点，解耦效果更明显，也就是越有可能通过浪涌测试。</p>
+<h3 id="3正确防护">
+<a class="header-anchor" href="#3%e6%ad%a3%e7%a1%ae%e9%98%b2%e6%8a%a4"></a>
+3、正确防护
+</h3><p>整改后可以通过测试的正确浪涌防护电路如下（测试时没带保险丝，浪涌测试也通过了，实际产品后来改板还是保险起见加上了保险丝）：</p>
+<p><img src="/post/hardware/hardware-01/images/Pasted%20image%2020260121184403.png" alt=""></p>
+<p>要求线对线打1kV，线对地打2kV。</p>
+<p>VCC和GND之间打1kV</p>
+<ul>
+<li>浪涌先通过压敏电阻吸收一波</li>
+<li>经过解耦电感，将压敏电阻和TVS分开</li>
+<li>TVS再进行更精密的钳位</li>
+<li>稳定后的电源再通过二极管送到整板系统</li>
+</ul>
+<p>VCC和GND对G之间打2kV</p>
+<ul>
+<li>浪涌通过压敏电阻和气体放电管进行能量泄放</li>
+<li>没钳住的通过TVS吸收</li>
+</ul>
+<p><strong>防护器件选型需要根据测试电压等级进行选型！懒得算就力大砖飞，往大了干！</strong></p>
+<h3 id="4其他问题">
+<a class="header-anchor" href="#4%e5%85%b6%e4%bb%96%e9%97%ae%e9%a2%98"></a>
+4、其他问题
+</h3><p>测试过程中，出现了电源掉电问题。防护器件正常防护后，电源电压被拉到了0V，并持续了几个毫秒，导致系统掉电。</p>
+<p>解决办法：防护电路后级加大电容，电源上并3个220uF的大电容。整机负载大概在8W左右，这么大的电容能测试通过，如果负载小一些，应该不需要这么大电容。<strong>电容耐压值要注意，不能低于防护器件的钳位电压，电解电容容易炸！</strong></p>
+</div>
+    <footer class="article-footer"><blockquote class="article-copyright"><p><strong><span class="icon-user icon"></span>本文作者：</strong>LMye</p><p>
+      <strong><span class="icon-link icon"></span>本文链接：</strong><a href="https://lmye001.github.io/post/hardware/hardware-01/">https://lmye001.github.io/post/hardware/hardware-01/</a>
+    </p><p><strong><span class="icon-pencil icon"></span>本文标题：</strong>直流电源浪涌防护经验</p><p><strong><span class="icon-calendar icon"></span>本文发布时间：</strong>2026-01-21 16:02:00</p><p>
+      
+      <strong><span class="icon-copyright icon"></span>本文版权：</strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener nofollow noreferrer" target="_blank"><span class="icon-creative-commons"></span>BY-NC-SA</a> 许可协议。转载请注明出处！
+    </p>
+    <span class="icon-creative-commons article-copyright-bg"></span></blockquote>
+<ul class="article-category-list"><li class="article-tag-list-item" data-aos="zoom-in">
+    <a
+      class="article-category-link"
+      href="/categories/%e5%b7%a5%e4%bd%9c"
+      data-aos="zoom-in"
+      >工作</a
+    >
+    </li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e7%a1%ac%e4%bb%b6"
+        rel="tag"
+        >硬件</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e6%b5%aa%e6%b6%8c"
+        rel="tag"
+        >浪涌</a
+      >
+    </li><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/%e7%94%b5%e8%b7%af"
+        rel="tag"
+        >电路</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap left"><img
+            data-src="/images/cover/cover-18.webp"
+            data-sizes="auto"
+            alt="读书 | 《怎样选择成长股》"
+            class="lazyload"
+          /><a
+          href="/post/read/20260113-import-18/"
+          aria-label="前一篇:读书 | 《怎样选择成长股》"
+          title="前一篇:读书 | 《怎样选择成长股》"
+        ></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">读书 | 《怎样选择成长股》</h3>
+      </div><div class="article-nav-link-wrap right"><img
+              data-src="https://i.ibb.co/JWPCPPYN/10.webp"
+              data-sizes="auto"
+              alt="网口浪涌防护电路"
+              class="lazyload"
+            /><a
+          href="/post/hardware/hardware-02/"
+          aria-label="后一篇:网口浪涌防护电路"
+          title="后一篇:网口浪涌防护电路"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">网口浪涌防护电路</h3>
+      </div></nav></article></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2026<span class="footer-info-sep rotate"></span>LMye
+    </div><div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Hugo</a
+        >&nbsp;Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;30.3k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;01:10</span>
+      </div><div class="footer-beian">
+        <img
+          style="object-fit: contain;margin-right: 2px;"
+          src="https://icp.gov.moe/images/ico64.png"
+          alt=""
+          width="24"
+          height="24"
+        />
+        <a
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          href="https://icp.gov.moe/?keyword=20268686"
+          >萌ICP备20268686号</a
+        >
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#直流电源浪涌防护经验">直流电源浪涌防护经验</a>
+      <ul>
+        <li><a href="#1错误防护">1、错误防护</a></li>
+        <li><a href="#2错误防护">2、错误防护</a></li>
+        <li><a href="#3正确防护">3、正确防护</a></li>
+        <li><a href="#4其他问题">4、其他问题</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/lin.webp"
+    data-sizes="auto"
+    alt="LMye"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">LMye</div>
+  <div class="sidebar-description">当你感到负重前行时，一定有狗东西在上面享福！</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">21</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      4
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">9</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/home-svg.svg" alt="home icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/archives-svg.svg" alt="archives icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/weblink"
+        aria-label="导航"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/weblink-svg.svg" alt="weblink icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">导航</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/tools"
+        aria-label="工具"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/tools-svg.svg" alt="tools icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">工具</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/friend-svg.svg" alt="friend icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">友链</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/game"
+        aria-label="游戏"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/game-svg.svg" alt="game icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">游戏</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/about-svg.svg" alt="about icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">关于</div>
+    </div></div></div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><script
+    src="/resources/lazysizes@5.3.2/lazysizes.min.js"
+    
+    
+    
+    
+    ></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    
+    
+    
+    
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous"  ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous"  ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax ></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "0SSY7ZBOI8",
+        apiKey: "0c084014dfbfe2cd97bf954df0eab235",
+        indexName: "lmye_blog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="/resources/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    defer
+    
+    
+    
+    ></script><script
+    src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
+    defer
+    
+    
+    
+    integrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous"  ></script><script>
+  var setupFirework = () => {
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.firework) {
+        const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+        options.excludeElements = options.excludeelements;
+        delete options.excludeelements;
+        window.firework(options);
+      }
+    }
+  }
+</script><script
+    src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js"
+    defer
+    
+    
+    onload="setupFirework()"
+    integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8&#43;pUoWX8n1rgq282T" crossorigin="anonymous"></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "LMye",
+          title: "直流电源浪涌防护经验",
+          url: "https:\/\/lmye001.github.io\/post\/hardware\/hardware-01\/",
+          description: " 直流电源浪涌防护经验 有款产品应用场景为工业场景，原本默认是输入12V，但客户环境通常希望接入24V电源。因此电源口浪涌防护按24V标准做测试。\n",
+          cover: "https:\/\/lmye001.github.io\/images\/banner.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax ></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script></div>
+</div><script
+    src="/resources/busuanzi@3.6.9/busuanzi.min.js"
+    
+    async
+    
+    
+    ></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script></body>
+</html>

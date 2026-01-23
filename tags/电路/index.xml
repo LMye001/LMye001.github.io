@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>电路 on LMye的博客</title>
+    <link>https://lmye001.github.io/tags/%E7%94%B5%E8%B7%AF/</link>
+    <description>Recent content from LMye的博客</description>
+    <generator>Hugo</generator>
+    <language>zh-CN</language>
+    
+    <managingEditor>lmye_001@qq.com (LMye)</managingEditor>
+    <webMaster>lmye_001@qq.com (LMye)</webMaster>
+    
+    <copyright>本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！</copyright>
+    
+    <lastBuildDate>Fri, 23 Jan 2026 16:02:00 +0800</lastBuildDate>
+    
+    
+    <atom:link href="https://lmye001.github.io/tags/%E7%94%B5%E8%B7%AF/index.xml" rel="self" type="application/rss&#43;xml" />
+    
+
+    
+    
+
+    <item>
+      <title>记一次网络丢包问题排查</title>
+      <link>https://lmye001.github.io/post/hardware/hardware-04/</link>
+      <pubDate>Fri, 23 Jan 2026 16:02:00 &#43;0800</pubDate>
+      <author>lmye_001@qq.com (LMye)</author>
+      <guid>https://lmye001.github.io/post/hardware/hardware-04/</guid>
+      <description>
+        <![CDATA[<h1>记一次网络丢包问题排查</h1><p>作者：LMye（lmye_001@qq.com）</p>
+        
+          <h2 id="记一次网络丢包问题排查">
+<a class="header-anchor" href="#%e8%ae%b0%e4%b8%80%e6%ac%a1%e7%bd%91%e7%bb%9c%e4%b8%a2%e5%8c%85%e9%97%ae%e9%a2%98%e6%8e%92%e6%9f%a5"></a>
+记一次网络丢包问题排查
+</h2><p>初次收到的问题反馈为：部分机器（一半）丢包比较严重。</p>
+<p>开玩笑？我这个PHY调过的，测过丢包和高低温的，怎么可能有问题！</p>
+<h3 id="1替换法排查">
+<a class="header-anchor" href="#1%e6%9b%bf%e6%8d%a2%e6%b3%95%e6%8e%92%e6%9f%a5"></a>
+1、替换法排查
+</h3><ul>
+<li>测试新产的机器，所谓不丢包的机器我测的时候也丢包。</li>
+<li>拿我手上以前留下来的自己用的裸板进行丢包测试，正常，基本上不丢包。</li>
+<li>拿我手上的网络板替换机器上的网络板，丢包——排除网络板的问题。</li>
+<li>拿我手上的主板替换机器上的主板，不丢包——主板问题。</li>
+</ul>
+<h3 id="2常规排查">
+<a class="header-anchor" href="#2%e5%b8%b8%e8%a7%84%e6%8e%92%e6%9f%a5"></a>
+2、常规排查
+</h3><ul>
+<li>排查PHY部分电路的几个电源电压、纹波情况</li>
+<li>排查PHY部分电路的上电时序</li>
+<li>排查RGMII信号质量</li>
+</ul>
+<p>由于上面替换法排除了PHY部分电路的问题，这几个可以不用查，直接查主板问题。（应不是干硬件的领导的要求，还是测了这些信号🙃）</p>
+        
+        <hr><p>本文2026-01-23首发于<a href='https://lmye001.github.io/'>LMye的博客</a>，最后修改于2026-01-23</p>]]>
+      </description>
+      
+        <category>工作</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>本安认证电路设计</title>
+      <link>https://lmye001.github.io/post/hardware/hardware-03/</link>
+      <pubDate>Thu, 22 Jan 2026 16:02:00 &#43;0800</pubDate>
+      <author>lmye_001@qq.com (LMye)</author>
+      <guid>https://lmye001.github.io/post/hardware/hardware-03/</guid>
+      <description>
+        <![CDATA[<h1>本安认证电路设计</h1><p>作者：LMye（lmye_001@qq.com）</p>
+        
+          <h2 id="本安认证电路设计">
+<a class="header-anchor" href="#%e6%9c%ac%e5%ae%89%e8%ae%a4%e8%af%81%e7%94%b5%e8%b7%af%e8%ae%be%e8%ae%a1"></a>
+本安认证电路设计
+</h2><h3 id="1电源设计上的电容要求">
+<a class="header-anchor" href="#1%e7%94%b5%e6%ba%90%e8%ae%be%e8%ae%a1%e4%b8%8a%e7%9a%84%e7%94%b5%e5%ae%b9%e8%a6%81%e6%b1%82"></a>
+1、电源设计上的电容要求
+</h3><p>参考GB/T 3836.4 的表A.2 电压和设备类别相对应的允许电容</p>
+<p><img src="/post/hardware/hardware-03/images/Pasted%20image%2020260122085732.png" alt=""></p>
+<p>Ⅰ类设备，额定输入电压12V时，1.5倍安全系数时的电容限值为38uF。</p>
+        
+        <hr><p>本文2026-01-22首发于<a href='https://lmye001.github.io/'>LMye的博客</a>，最后修改于2026-01-22</p>]]>
+      </description>
+      
+        <category>工作</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>网口浪涌防护电路</title>
+      <link>https://lmye001.github.io/post/hardware/hardware-02/</link>
+      <pubDate>Wed, 21 Jan 2026 18:02:00 &#43;0800</pubDate>
+      <author>lmye_001@qq.com (LMye)</author>
+      <guid>https://lmye001.github.io/post/hardware/hardware-02/</guid>
+      <description>
+        <![CDATA[<h1>网口浪涌防护电路</h1><p>作者：LMye（lmye_001@qq.com）</p>
+        
+          <h2 id="网口浪涌防护电路">
+<a class="header-anchor" href="#%e7%bd%91%e5%8f%a3%e6%b5%aa%e6%b6%8c%e9%98%b2%e6%8a%a4%e7%94%b5%e8%b7%af"></a>
+网口浪涌防护电路
+</h2><p>一般以太网电路，网络变压器左侧差分信号接PHY芯片，右侧差分信号接外部RJ45端。</p>
+<p><img src="/post/hardware/hardware-02/images/Pasted%20image%2020260121190937.png" alt=""></p>
+<h3 id="1共模防护">
+<a class="header-anchor" href="#1%e5%85%b1%e6%a8%a1%e9%98%b2%e6%8a%a4"></a>
+1、共模防护
+</h3><p>上面网络变压器右侧的75R电阻和1nF电容电路，叫做Bob-Smith电路，浪涌事件存在于信号线到G之间时，信号线上的浪涌能量通过网变的中心抽头，再经过75R电阻和1nF电容到G。这个Bob-Smith电路主要就是作为浪涌的共模防护。</p>
+        
+        <hr><p>本文2026-01-21首发于<a href='https://lmye001.github.io/'>LMye的博客</a>，最后修改于2026-01-21</p>]]>
+      </description>
+      
+        <category>工作</category>
+      
+    </item>
+    
+    
+
+    <item>
+      <title>直流电源浪涌防护经验</title>
+      <link>https://lmye001.github.io/post/hardware/hardware-01/</link>
+      <pubDate>Wed, 21 Jan 2026 16:02:00 &#43;0800</pubDate>
+      <author>lmye_001@qq.com (LMye)</author>
+      <guid>https://lmye001.github.io/post/hardware/hardware-01/</guid>
+      <description>
+        <![CDATA[<h1>直流电源浪涌防护经验</h1><p>作者：LMye（lmye_001@qq.com）</p>
+        
+          <h2 id="直流电源浪涌防护经验">
+<a class="header-anchor" href="#%e7%9b%b4%e6%b5%81%e7%94%b5%e6%ba%90%e6%b5%aa%e6%b6%8c%e9%98%b2%e6%8a%a4%e7%bb%8f%e9%aa%8c"></a>
+直流电源浪涌防护经验
+</h2><p>有款产品应用场景为工业场景，原本默认是输入12V，但客户环境通常希望接入24V电源。因此电源口浪涌防护按24V标准做测试。</p>
+        
+        <hr><p>本文2026-01-21首发于<a href='https://lmye001.github.io/'>LMye的博客</a>，最后修改于2026-01-21</p>]]>
+      </description>
+      
+        <category>工作</category>
+      
+    </item>
+    
+  </channel>
+</rss>

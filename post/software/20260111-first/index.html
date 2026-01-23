@@ -1,0 +1,753 @@
+<!doctype html>
+<html
+  lang="zh-CN" 
+  data-theme-mode="auto"
+  >
+  <head><meta charset="utf-8" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no"
+/><title>
+  开端-hugo博客搭建-使用reimu主题 | LMye
+</title>
+<meta name="description" content="当你感到负重前行时，一定有狗东西在上面享福！"/><script>
+  window.siteConfig = JSON.parse("{\"anchor_icon\":null,\"base\":\"https://lmye001.github.io/\",\"clipboard\":{\"copyright\":{\"count\":50,\"enable\":false,\"license_type\":\"by-nc-sa\"},\"fail\":{\"en\":\"Copy failed (ﾟ⊿ﾟ)ﾂ\",\"ja\":\"コピー失敗 (ﾟ⊿ﾟ)ﾂ\",\"pt-br\":\"Falha ao copiar (ﾟ⊿ﾟ)ﾂ\",\"zh-cn\":\"复制失败 (ﾟ⊿ﾟ)ﾂ\",\"zh-tw\":\"複製失敗 (ﾟ⊿ﾟ)ﾂ\"},\"success\":{\"en\":\"Copy successfully (*^▽^*)\",\"ja\":\"コピー成功 (*^▽^*)\",\"pt-br\":\"Copiado com sucesso (*^▽^*)\",\"zh-cn\":\"复制成功 (*^▽^*)\",\"zh-tw\":\"複製成功 (*^▽^*)\"}},\"code_block\":{\"expand\":true},\"icon_font\":\"4552607_4k4bc36ef96\",\"outdate\":{\"daysago\":180,\"enable\":false,\"message\":{\"en\":\"This article was last updated on {time}. Please note that the content may no longer be applicable.\",\"ja\":\"この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。\",\"pt-br\":\"Este artigo foi atualizado pela última vez em {time}. Observe que o conteúdo pode não ser mais aplicável.\",\"zh-cn\":\"本文最后更新于 {time}，请注意文中内容可能已不适用。\",\"zh-tw\":\"本文最後更新於 {time}，請注意文中內容可能已不適用。\"}}}");
+  
+</script>
+<link
+    rel="preload"
+    as="style"
+    crossorigin
+    href="https://fontsapi.zeoseven.com/292/main/result.css"
+    onload="this.rel='stylesheet'"
+  /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  rel="preload"
+  as="style"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+/>
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic%7cNoto%20Serif%20SC:400,400italic,700,700italic%7c&amp;display=swap"
+  media="print"
+  onload="this.media='all'"
+/>
+<link
+    rel="preload"
+    href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  /><link rel="stylesheet" href="/css/loader.min.14df05c02c63459533ffcbb5e07f8ba38b8a4eed13a1e5c3b19d3045491c4e2a.css" /><meta property="og:type" content="website" />
+  <meta property="og:title" content="开端-hugo博客搭建-使用reimu主题 | LMye" />
+  <meta
+    property="og:description"
+    content="当你感到负重前行时，一定有狗东西在上面享福！"
+  />
+  <meta property="og:url" content="https://lmye001.github.io/post/software/20260111-first/" />
+  <meta
+    property="og:site_name"
+    content="LMye的博客"
+  />
+  <meta
+    property="og:image"
+    content="/images/cover/hugo-logo-wide.webp"
+  />
+  <meta property="article:author" content="LMye" />
+  <meta property="article:published_time" content="2026-01-11T11:23:47&#43;08:00" />
+  <meta property="article:modified_time" content="2026-01-11T11:23:47&#43;08:00" /><meta property="article:tag" content="hugo" /><meta name="twitter:card" content="summary" />
+  <meta name="twitter:image" content="/images/cover/hugo-logo-wide.webp" />
+
+
+<link rel="shortcut icon" href="/favicon.ico"><link rel="stylesheet" href="/css/main.min.68c569684fda1df8f04a0cb83be27993f3d26b341df231121c2b0c23adb61742.css" /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css"
+    integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei&#43;Zx/1oA/0l8ysE" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><link
+    rel="preload"
+    as="style"
+    href="https://npm.webcache.cn/katex@0.16.24/dist/katex.min.css"
+    integrity="sha384-tTgKLjMYmJr94v8qu2PE5MUGSMbyN2xiH266JUB3gpm8vnnJywd1dWSOEfrFz&#43;YI" crossorigin="anonymous"
+    onload="this.onload=null;this.rel='stylesheet'"
+  /><script
+    src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js"
+    
+    
+    
+    
+    integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script><link
+    rel="stylesheet"
+    href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css"
+    integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous"/></head>
+  <body><div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate"><svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+          M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg></div><div class="loading-word">加载中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script><div id="copy-tooltip"></div>
+<div id="lang-tooltip">
+本文章没有找到对应的语言版本
+</div>
+<div id="heatmap-tooltip"></div><div id="container">
+      <div id="wrap"><div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation"><a class="main-nav-link-wrap" href="/"><div class='main-nav-icon icon '><img src="/images/logo/home-svg.svg" alt="home icon" class="" style="height: 1em;"></div><span class="main-nav-link">首页</span>
+      </a><a class="main-nav-link-wrap" href="/archives"><div class='main-nav-icon icon '><img src="/images/logo/archives-svg.svg" alt="archives icon" class="" style="height: 1em;"></div><span class="main-nav-link">归档</span>
+      </a><a class="main-nav-link-wrap" href="/weblink"><div class='main-nav-icon icon '><img src="/images/logo/weblink-svg.svg" alt="weblink icon" class="" style="height: 1em;"></div><span class="main-nav-link">导航</span>
+      </a><a class="main-nav-link-wrap" href="/tools"><div class='main-nav-icon icon '><img src="/images/logo/tools-svg.svg" alt="tools icon" class="" style="height: 1em;"></div><span class="main-nav-link">工具</span>
+      </a><a class="main-nav-link-wrap" href="/friend"><div class='main-nav-icon icon '><img src="/images/logo/friend-svg.svg" alt="friend icon" class="" style="height: 1em;"></div><span class="main-nav-link">友链</span>
+      </a><a class="main-nav-link-wrap" href="/game"><div class='main-nav-icon icon '><img src="/images/logo/game-svg.svg" alt="game icon" class="" style="height: 1em;"></div><span class="main-nav-link">游戏</span>
+      </a><a class="main-nav-link-wrap" href="/about"><div class='main-nav-icon icon '><img src="/images/logo/about-svg.svg" alt="about icon" class="" style="height: 1em;"></div><span class="main-nav-link">关于</span>
+      </a><a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation"><a id="nav-search-btn" class="nav-icon popup-trigger" title="搜索" aria-label="搜索"></a></nav></div>
+<header id="header" aria-label="Site header"><picture></picture>
+    <img  fetchpriority="high" src="/images/cover/hugo-logo-wide.webp" alt="开端-hugo博客搭建-使用reimu主题"><div id="header-outer">
+    <div id="header-title"><span id="logo">
+            <h1 data-aos="slide-up">开端-hugo博客搭建-使用reimu主题</h1>
+          </span><h2 id="subtitle-wrap" data-aos="slide-down"></h2></div>
+  </div>
+</header><div id="content"
+          aria-label="Page content"
+          class="sidebar-left"
+            ><aside id="sidebar" aria-label="Sidebar"><div class="sidebar-wrapper-container sticky"><div class="sidebar-wrapper">
+    <div
+      class="sidebar-wrap"
+      data-aos="fade-up"
+    ><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1安装hugo">1、安装hugo</a></li>
+    <li><a href="#2安装主题">2、安装主题</a></li>
+    <li><a href="#3修改配置">3、修改配置</a></li>
+    <li><a href="#4部署博客">4、部署博客</a></li>
+  </ul>
+</nav>
+</div></div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/lin.webp"
+    data-sizes="auto"
+    alt="LMye"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">LMye</div>
+  <div class="sidebar-description">当你感到负重前行时，一定有狗东西在上面享福！</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">21</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      4
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">9</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/home-svg.svg" alt="home icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/archives-svg.svg" alt="archives icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/weblink"
+        aria-label="导航"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/weblink-svg.svg" alt="weblink icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">导航</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/tools"
+        aria-label="工具"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/tools-svg.svg" alt="tools icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">工具</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/friend-svg.svg" alt="friend icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">友链</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/game"
+        aria-label="游戏"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/game-svg.svg" alt="game icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">游戏</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/about-svg.svg" alt="about icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">关于</div>
+    </div></div></div><div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div></div>
+  </div><div class="sidebar-widget"></div></div></aside>
+<section id="main" aria-label="Main content"><article
+  class="h-entry article"
+  itemscope
+  itemtype="https://schema.org/BlogPosting"
+>
+  <div
+    class="article-inner"
+    data-aos="fade-up"
+  >
+    <div class="article-meta"><div class="article-date">
+  <span
+    class="article-date-link icon-calendar"
+    data-aos="zoom-in"
+  >
+    <time datetime="2026-01-11 11:23:47 &#43;0800 CST" itemprop="datePublished"
+      >2026-01-11</time
+    >
+    <time style="display: none;" id="post-update-time"
+      >2026-01-11</time
+    >
+  </span></div>
+</div><div class="hr-line"></div><div class="e-content article-entry" itemprop="articleBody"><h1 id="开端-hugo博客搭建-使用reimu主题">
+<a class="header-anchor" href="#%e5%bc%80%e7%ab%af-hugo%e5%8d%9a%e5%ae%a2%e6%90%ad%e5%bb%ba-%e4%bd%bf%e7%94%a8reimu%e4%b8%bb%e9%a2%98"></a>
+开端-hugo博客搭建-使用reimu主题
+</h1><h2 id="1安装hugo">
+<a class="header-anchor" href="#1%e5%ae%89%e8%a3%85hugo"></a>
+1、安装hugo
+</h2><p>Windows下手动安装hugo步骤：</p>
+<p><strong>1.1、参考文档</strong></p>
+<p>hugo官方中文文档主页：<a href="https://hugo.opendocs.io/">Hugo官方文档中文版|Hugo中文文档 | Hugo官方文档</a></p>
+<p><strong>1.2、下载安装包</strong></p>
+<p>hugo安装包：<a href="https://github.com/gohugoio/hugo/releases/tag/v0.154.4">Release v0.154.4 · gohugoio/hugo</a>
+Windows环境下可以下载安装包：hugo_extended_withdeploy_0.154.4_windows-amd64.zip</p>
+<p><strong>1.3、解压缩</strong></p>
+<p>解压缩到F:\Hugo\Hugo</p>
+<p>此时hugo.exe应用程序的路径为：F:\Hugo\Hugo\hugo_extended_withdeploy_0.154.3_windows-amd64</p>
+<p><strong>1.4、添加hugo到环境变量</strong></p>
+<p>打开环境变量设置界面：右键我的电脑-属性-高级系统设置-环境变量</p>
+<p>或者按下win键，直接搜索环境变量</p>
+<p>在系统变量中的Path中，新建一个环境变量，将hugo应用程序的路径F:\Hugo\Hugo\hugo_extended_withdeploy_0.154.3_windows-amd64添加进去</p>
+<p><strong>1.5、验证环境</strong></p>
+<p>打开cmd窗口，输入<code>hugo version</code>，没报错就是ok了。</p>
+<p><strong>1.6、创建工程</strong></p>
+<p>新建目录F:\Hugo\Project，在这个目录下打开cmd命令窗口，输入<code>hugo new site MyBlog</code>，hugo会自动创建全部工程文件</p>
+<h2 id="2安装主题">
+<a class="header-anchor" href="#2%e5%ae%89%e8%a3%85%e4%b8%bb%e9%a2%98"></a>
+2、安装主题
+</h2><p>在hugo官方主题网站下，有很多主题可供选择，这里有很多主题，第一眼就看上hugo-theme-reimu这个主题了</p>
+<p>主题：<a href="https://themes.gohugo.com.cn/">完整列表 | Hugo 主题</a></p>
+<p><strong>2.1、手动主题下载</strong></p>
+<p>reimu主题下载地址：<a href="https://github.com/D-Sketon/hugo-theme-reimu">GitHub - D-Sketon/hugo-theme-reimu: 一款博丽灵梦风格的Hugo主题 | A Hakurei Reimu style Hugo theme. 💘Touhou💘</a></p>
+<p>进入git界面，点击tags，选择版本v0.14.2，直接点击版本下方的zip下载压缩包：<a href="https://github.com/D-Sketon/hugo-theme-reimu/archive/refs/tags/v0.14.2.zip">https://github.com/D-Sketon/hugo-theme-reimu/archive/refs/tags/v0.14.2.zip</a></p>
+<p><strong>2.2、解压缩主题</strong></p>
+<p>将解压后的主题文件，全部复制到工程目录F:\Hugo\Project\MyBlog\themes</p>
+<p>将themes原本的文件夹名字hugo-theme-reimu-0.14.2 改为 reimu （只是为了方便）</p>
+<h2 id="3修改配置">
+<a class="header-anchor" href="#3%e4%bf%ae%e6%94%b9%e9%85%8d%e7%bd%ae"></a>
+3、修改配置
+</h2><p><strong>3.1、修改hugo.toml</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-hugo.toml" data-lang="hugo.toml"><span class="line"><span class="cl"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s1">&#39;https://example.org/&#39;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nx">title</span> <span class="p">=</span> <span class="s1">&#39;MyBlog&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">theme</span> <span class="p">=</span> <span class="s1">&#39;reimu&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">languageCode</span> <span class="p">=</span> <span class="s1">&#39;zh-CN&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">defaultContentLanguage</span> <span class="p">=</span> <span class="s1">&#39;zh-CN&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">languages</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="p">[</span><span class="nx">languages</span><span class="p">.</span><span class="nx">zh-CN</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="nx">languageName</span> <span class="p">=</span> <span class="s1">&#39;简体中文&#39;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">weight</span> <span class="p">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="nx">hasCJKLanguage</span> <span class="p">=</span> <span class="kc">true</span>
+</span></span></code></pre></div><p>主要的地方在于：</p>
+<p><code>theme = 'reimu'</code> 这里就是设置的主题名称</p>
+<p><code>title = 'MyBlog'</code> 修改这个MyBlog可以修改博客的名称</p>
+<p>后面是设置语言的配置，参考主题文件夹中的readme文档添加</p>
+<p><strong>3.2、运行博客</strong></p>
+<p>cmd进入MyBlog目录，输入<code>hugo server</code></p>
+<p>打开浏览器，输入<code>http://localhost:1313/</code></p>
+<p>正常情况下可以正常运行博客了，整个博客看起来是那么回事了，不过还有一些小问题，比如不显示头像，关于和友链等打不开等等问题。</p>
+<p><strong>3.3、复制文件</strong></p>
+<p>复制主题themes\reimu_example目录下的所有文件到MyBlog\content目录下（这个目录下的about和friend文件就是关于和友链的页面内容，post目录则是具体博客文章的路径）</p>
+<p>复制主题themes\static目录下的所有文件到MyBlog\static目录下（存放各种静态资源的地方，头像、图片、鼠标美化图片等等）</p>
+<p>复制主题themes\data目录下的所有文件到MyBlog\data目录下（covers用于设置封面，文章会随机使用这个里面的图片链接，主题作者这里只写了三个链接，但作者实际上传了28张，也就是这个文件的内容可以继续括到编号28；friends用来设置友链；vendor用来设置各种资源地址，里面默认使用webcache，有可能有些功能用不了，可以把功能前面的webcache改成local，因为所有的资源文件都包括在了本地）</p>
+<p>复制主题themes\config目录下的所有文件到MyBlog\config目录下（默认工程没有config文件夹，直接全部复制过来，params这个文件中可以设置很多东西，比如头像设置、背景图片设置、部分主题颜色、作者名、版权、ICP备案等等）</p>
+<p>在MyBlog\static目录下新建文件夹avatar，这个文件夹里面放头像图片，找到一张webp格式的图片，命名为avatar.webp（这是因为默认的头像路径和名字是这个）</p>
+<p>刷新浏览器（由于浏览器自带缓存可能会导致资源更新不及时，最好是ctrl+F5刷新一下），可以看到头像更新了，友链等界面可以正常打开了</p>
+<p><strong>3.4、添加文章</strong></p>
+<p>在MyBlog\content\post目录下，新建test.md文件，md文件内容如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-test.md" data-lang="test.md"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: &#39;测试&#39;
+</span></span><span class="line"><span class="cl">date: 2026-01-01T12:30:54+08:00
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">你好啊！
+</span></span></code></pre></div><p>三横杠之间的内容，title为文章标题，date为时间</p>
+<p>保存后在浏览器可以看到文章已经显示出来</p>
+<h2 id="4部署博客">
+<a class="header-anchor" href="#4%e9%83%a8%e7%bd%b2%e5%8d%9a%e5%ae%a2"></a>
+4、部署博客
+</h2><p><strong>4.1、下载安装git</strong></p>
+<p>下载地址：<a href="https://cn-git.com/downloads/">Git - 下载 - Git 版本控制系统</a></p>
+<p>安装过程一路next</p>
+<p><strong>4.2、新建git仓库</strong></p>
+<p>注册并登录github</p>
+<p>新建仓库，仓库名为 github账户名.github.io，填写完成后直接创建</p>
+<p><strong>4.3、部署博客</strong></p>
+<p>在MyBlog工程中的public目录下，打开cmd</p>
+<p>另外一点，工程根目录下的hugo.toml文件，需要将baseURL改为创建的仓库地址</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-hugo.toml" data-lang="hugo.toml"><span class="line"><span class="cl"><span class="nx">baseURL</span> <span class="p">=</span> <span class="s1">&#39;https://github账户名.github.io/&#39;</span>
+</span></span></code></pre></div><p>在上传之前，首次使用git需要配置用户名和邮箱地址，在cmd中输入命令：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">git config --global user.name <span class="s2">&#34;你的github用户名&#34;</span>
+</span></span><span class="line"><span class="cl">git config --global user.email <span class="s2">&#34;你的github邮箱地址&#34;</span>
+</span></span></code></pre></div><p>配置完成后就可以上传代码了：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cmd" data-lang="cmd"><span class="line"><span class="cl">git init
+</span></span><span class="line"><span class="cl">git remote add origin https://github.com/你的用户名/你的用户名.github.io.git
+</span></span><span class="line"><span class="cl">git add .
+</span></span><span class="line"><span class="cl">git commit -m <span class="s2">&#34;first commit&#34;</span>
+</span></span><span class="line"><span class="cl">git branch -M main
+</span></span><span class="line"><span class="cl">git push -u origin main
+</span></span></code></pre></div><p>等待github上仓库-设置-pages页面部署完成，直接点击Visit site打开网页，或者浏览器输入 https://你的github用户名.github.io，就可以看到博客了</p>
+<h1 id="5遇到的问题">
+<a class="header-anchor" href="#5%e9%81%87%e5%88%b0%e7%9a%84%e9%97%ae%e9%a2%98"></a>
+5、遇到的问题
+</h1><p><strong>5.1、打开底部copyright功能后，本文链接地址还是调试时的本地地址</strong></p>
+<p>删除工程目录下的public文件夹</p>
+<p>在cmd输入<code>hugo</code>重新生成public文件夹后重新部署</p>
+<p>使用<code>hugo server</code>生成的public会使用本地地址，而使用<code>hugo</code>生成的public会使用 hugo.toml中的baseURL</p>
+<p><strong>5.2、目录结构改变之后push git报错</strong></p>
+<p>首次使用的是这个命令<code>git push -u origin main</code></p>
+<p>正常来说后续更新文章可以使用这个命令<code>git push origin main</code></p>
+<p>目录结构发生改变之后，push报错，强制上传<code>git push -f origin main</code></p>
+<p><strong>5.3、页脚访客数不显示</strong></p>
+<p>主题使用的是2.3.0版本的不蒜子，不蒜子官方已经到了3.6.9，不确定是不是已经不支持之前的写法了，直接更新到<a href="https://cdn.busuanzi.cc/download/Busuanzi_3.6.9.zip">3.6.9</a></p>
+<p>将下载的js文件复制到目录 MyBlog\static\resources\busuanzi@3.6.9，两个js文件只能使用一个，具体差异在于显示的格式，一个是具体数量，一个是带单位的</p>
+<p>修改MyBlog\data目录下的vendor文件，删除或者注释掉之前的busuanzi，3.6.9版本添加下面这段内容，如果是下载的别的版本，integrity需要重新计算哈希值</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-vendor.yml" data-lang="vendor.yml"><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">busuanzi</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">src</span><span class="p">:</span><span class="w"> </span><span class="l">local|busuanzi@3.6.9/busuanzi.min.js</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">integrity</span><span class="p">:</span><span class="w"> </span><span class="l">sha384-/a4POcjP+TuRxeDVCdtn3SzMCfjBAm3XAwHuuUt9gch0p51XM1q5pZn/r+JcgRpf</span><span class="w">
+</span></span></span></code></pre></div><p>再仿照官网给的写法，修改MyBlog\layouts\partials目录下的footer.html文件，没有这个文件就从主题中复制过来再修改</p>
+<p><img src="/post/software/20260111-first/images/Pasted%20image%2020260113142218.png" alt=""></p>
+<p>修改点为原本主题写的id是busuanzi_value_site_pv，改成官网的写法busuanzi_site_pv</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-footer.html" data-lang="footer.html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icon-eye&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;busuanzi_container_site_pv&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">          <span class="p">&gt;</span>{{ i18n &#34;busuanzi.pv&#34; }}<span class="ni">&amp;nbsp;</span><span class="p">&lt;</span><span class="nt">span</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="na">id</span><span class="o">=</span><span class="s">&#34;busuanzi_site_pv&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">          <span class="p">&gt;&lt;/</span><span class="nt">span</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="ni">&amp;nbsp;</span>|<span class="ni">&amp;nbsp;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;icon-user&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">span</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;busuanzi_container_site_uv&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">          <span class="p">&gt;</span>{{ i18n &#34;busuanzi.uv&#34; }}<span class="ni">&amp;nbsp;</span><span class="p">&lt;</span><span class="nt">span</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">            <span class="na">id</span><span class="o">=</span><span class="s">&#34;busuanzi_site_uv&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">          <span class="p">&gt;&lt;/</span><span class="nt">span</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">&gt;&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></div><p>修改后，hugo server 命令进行本地调试的话，可以看到页脚显示 域名/IP已被禁用，这就算是ok了，上传git后就能正常显示了</p>
+<p><img src="/post/software/20260111-first/images/Pasted%20image%2020260113142143.png" alt=""></p>
+<p><strong>5.4、关闭页面的版权信息</strong></p>
+<p>params中打开article_copyright功能后，友链、关于等页面也会在文章底部显示版权信息。如果不需要显示的话，在对应页面的md文件头部添加<code>copyright: false</code></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-md" data-lang="md"><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">title: 关于
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">description: 关于
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">copyright: false
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">date: 2026-01-11T13:00:00+08:00
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">lastmod: 2026-01-11T13:00:00+08:00
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></div><p><strong>5.5、持续更新中……</strong></p>
+</div>
+    <footer class="article-footer"><blockquote class="article-copyright"><p><strong><span class="icon-user icon"></span>本文作者：</strong>LMye</p><p>
+      <strong><span class="icon-link icon"></span>本文链接：</strong><a href="https://lmye001.github.io/post/software/20260111-first/">https://lmye001.github.io/post/software/20260111-first/</a>
+    </p><p><strong><span class="icon-pencil icon"></span>本文标题：</strong>开端-hugo博客搭建-使用reimu主题</p><p><strong><span class="icon-calendar icon"></span>本文发布时间：</strong>2026-01-11 11:23:47</p><p>
+      
+      <strong><span class="icon-copyright icon"></span>本文版权：</strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="noopener nofollow noreferrer" target="_blank"><span class="icon-creative-commons"></span>BY-NC-SA</a> 许可协议。转载请注明出处！
+    </p>
+    <span class="icon-creative-commons article-copyright-bg"></span></blockquote>
+<ul class="article-category-list"><li class="article-tag-list-item" data-aos="zoom-in">
+    <a
+      class="article-category-link"
+      href="/categories/%e4%bb%a3%e7%a0%81"
+      data-aos="zoom-in"
+      >代码</a
+    >
+    </li></ul>
+<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in">
+      <a
+        class="article-tag-list-link"
+        href="/tags/hugo"
+        rel="tag"
+        >hugo</a
+      >
+    </li></ul>
+</footer>
+  </div><nav
+    id="article-nav"
+    aria-label="Article navigation"
+    data-aos="fade-up"
+  ><div class="article-nav-link-wrap right"><img
+            data-src="/images/cover/cover-2.webp"
+            data-sizes="auto"
+            alt="读书 |《人类简史》"
+            class="lazyload"
+          /><a
+          href="/post/read/20260113-import-02/"
+          aria-label="后一篇:读书 |《人类简史》"
+          title="后一篇:读书 |《人类简史》"
+        ></a>
+        <div class="article-nav-caption">后一篇</div>
+        <h3 class="article-nav-title">读书 |《人类简史》</h3>
+      </div></nav></article></section>
+        </div><footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info"><div>
+      <span class="icon-copyright"></span>2026<span class="footer-info-sep rotate"></span>LMye
+    </div><div>
+        基于&nbsp;<a
+          href="https://gohugo.io/"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Hugo</a
+        >&nbsp;Theme.<a
+          href="https://github.com/D-Sketon/hugo-theme-reimu"
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          >Reimu</a
+        >
+      </div><div>
+        <span class="icon-brush"
+          >&nbsp;30.3k</span
+        >
+        &nbsp;|&nbsp;
+        <span class="icon-coffee">&nbsp;01:10</span>
+      </div><div class="footer-beian">
+        <img
+          style="object-fit: contain;margin-right: 2px;"
+          src="https://icp.gov.moe/images/ico64.png"
+          alt=""
+          width="24"
+          height="24"
+        />
+        <a
+          target="_blank"
+          rel="noopener nofollow noreferrer"
+          href="https://icp.gov.moe/?keyword=20268686"
+          >萌ICP备20268686号</a
+        >
+      </div><div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv"
+          >总访问量&nbsp;<span
+            id="busuanzi_site_pv"
+          ></span
+        ></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv"
+          >总访客量&nbsp;<span
+            id="busuanzi_site_uv"
+          ></span
+        ></span>
+      </div></div>
+</footer>
+<div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div><div id="mask" class="hide"></div>
+      </div><nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap"><div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class">
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#1安装hugo">1、安装hugo</a></li>
+    <li><a href="#2安装主题">2、安装主题</a></li>
+    <li><a href="#3修改配置">3、修改配置</a></li>
+    <li><a href="#4部署博客">4、部署博客</a></li>
+  </ul>
+</nav>
+</div></div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img
+    data-src="/avatar/lin.webp"
+    data-sizes="auto"
+    alt="LMye"
+    class="lazyload"
+  />
+  <div class="sidebar-author-name">LMye</div>
+  <div class="sidebar-description">当你感到负重前行时，一定有狗东西在上面享福！</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div><div class="sidebar-state-number">21</div>
+  </div>
+  <a class="sidebar-state-category" href="/categories/" aria-label="sidebar-state-category-link">
+    <div>分类</div>
+    <div class="sidebar-state-number">
+      4
+    </div>
+  </a>
+  <a class="sidebar-state-tag" href="/tags/" aria-label="sidebar-state-tag-link">
+    <div>标签</div>
+    <div class="sidebar-state-number">9</div>
+  </a>
+</div>
+<div class="sidebar-social" ></div><div class="sidebar-menu"><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/"
+        aria-label="首页"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/home-svg.svg" alt="home icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">首页</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/archives"
+        aria-label="归档"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/archives-svg.svg" alt="archives icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">归档</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/weblink"
+        aria-label="导航"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/weblink-svg.svg" alt="weblink icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">导航</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/tools"
+        aria-label="工具"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/tools-svg.svg" alt="tools icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">工具</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/friend"
+        aria-label="友链"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/friend-svg.svg" alt="friend icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">友链</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/game"
+        aria-label="游戏"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/game-svg.svg" alt="game icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">游戏</div>
+    </div><div class="sidebar-menu-link-wrap">
+      <a
+        class="sidebar-menu-link-dummy"
+        href="/about"
+        aria-label="关于"
+      ></a><div class='sidebar-menu-icon icon '><img src="/images/logo/about-svg.svg" alt="about icon" class="" style="height: 1em;"></div><div class="sidebar-menu-link">关于</div>
+    </div></div></div></div><div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div></nav>
+</div><div class="site-search">
+        <div class="reimu-popup popup">
+          <div class="reimu-search">
+            <div class="reimu-search-input-icon"></div>
+            <div id="reimu-search-input"></div>
+            <div class="popup-btn-close"></div>
+          </div>
+          <div class="reimu-results">
+            <div id="reimu-stats"></div>
+            <div id="reimu-hits"></div>
+            <div id="reimu-pagination" class="reimu-pagination"></div>
+          </div>
+          <img class="reimu-bg" src="/images/reimu.png" />
+        </div>
+      </div><script
+    src="/resources/lazysizes@5.3.2/lazysizes.min.js"
+    
+    
+    
+    
+    ></script><script
+    src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js"
+    
+    
+    
+    
+    integrity="sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script><script src="/js/main.js" integrity="" crossorigin="anonymous"  ></script><script src="/js/aos.js" integrity="" crossorigin="anonymous"  ></script><script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", aosInit);
+    } else {
+      aosInit();
+    }
+  </script><script src="/js/pjax_main.js" integrity="" crossorigin="anonymous" data-pjax ></script><script>
+    var ALGOLIA_CONFIG = {
+      logo: '\/images\/algolia_logo.svg',
+      algolia: {
+        applicationID: "0SSY7ZBOI8",
+        apiKey: "0c084014dfbfe2cd97bf954df0eab235",
+        indexName: "lmye_blog",
+        hits: {
+          "per_page": parseInt("10")
+        },
+        labels: {
+          "input_placeholder": '搜索.....',
+          "hits_empty": '未发现与 「${query}」相关内容',
+          "hits_stats": '找到${hits}条结果（用时 ${time} ms）'
+        }
+      }
+    };
+  </script><script
+    src="/resources/algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js"
+    defer
+    
+    
+    
+    ></script><script
+    src="https://npm.webcache.cn/@reimujs/instantsearch.js@4.57.0-beta.1/dist/instantsearch.production.min.js"
+    defer
+    
+    
+    
+    integrity="sha384-aagKMe8nkqaP2DYQc8kkYOL5l&#43;M5Q2WH/Uhr4teOh0Ybp0RZj0kUSDm45qPikMjK" crossorigin="anonymous"></script><script src="/js/algolia_search.js" integrity="" crossorigin="anonymous"  ></script><script>
+  var setupFirework = () => {
+    if (! false  || !window.matchMedia('(max-width: 768px)').matches) {
+      if (window.firework) {
+        const options = JSON.parse("{\"excludeelements\":[\"a\",\"button\"],\"particles\":[{\"colors\":[\"var(--red-1)\",\"var(--red-2)\",\"var(--red-3)\",\"var(--red-4)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"emit\"],\"number\":20,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.3,0.5],\"radius\":[16,32]}},{\"colors\":[\"var(--red-0)\"],\"duration\":[1200,1800],\"easing\":\"easeOutExpo\",\"move\":[\"diffuse\"],\"number\":1,\"shape\":\"circle\",\"shapeOptions\":{\"alpha\":[0.2,0.5],\"lineWidth\":6,\"radius\":20}}]}");
+        options.excludeElements = options.excludeelements;
+        delete options.excludeelements;
+        window.firework(options);
+      }
+    }
+  }
+</script><script
+    src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js"
+    defer
+    
+    
+    onload="setupFirework()"
+    integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8&#43;pUoWX8n1rgq282T" crossorigin="anonymous"></script>
+
+<div id="lazy-script">
+  <div><script data-pjax>
+        window.REIMU_POST = {
+          author: "LMye",
+          title: "开端-hugo博客搭建-使用reimu主题",
+          url: "https:\/\/lmye001.github.io\/post\/software\/20260111-first\/",
+          description: " 开端-hugo博客搭建-使用reimu主题 1、安装hugo Windows下手动安装hugo步骤：\n1.1、参考文档\nhugo官方中文文档主页：Hugo官方文档中文版|Hugo中文文档 | Hugo官方文档\n",
+          cover: "https:\/\/lmye001.github.io\/images\/cover\/hugo-logo-wide.webp",
+        };
+      </script><script src="/js/insert_highlight.js" integrity="" crossorigin="anonymous" data-pjax ></script><script src="/js/tabs.js" integrity="" crossorigin="anonymous" data-pjax defer></script><script type="module" data-pjax>const PhotoSwipeLightbox = (await safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe-lightbox.esm.min.js", "sha384-DiL6M\/gG\u002bwmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF\/N6lrZi\/")).default;const initPswp = (gallery, children) => {
+          if (_$$(`${gallery} ${children}`).length > 0) {
+            new PhotoSwipeLightbox({
+              gallery,
+              children,pswpModule: () => safeImport("https:\/\/npm.webcache.cn\/photoswipe@5.4.4\/dist\/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8\u002boTJ7m3DfYEWX1fu1scuS4\u002bs")}).init();
+          }
+        }
+        const pswp = () => {
+          initPswp('.article-entry', 'a.article-gallery-item');
+          initPswp('.article-gallery', 'a.article-gallery-item');
+          window.lightboxStatus = 'done';
+          window.removeEventListener('lightbox:ready', pswp);
+        }
+        if(window.lightboxStatus === 'ready') {
+          pswp()
+        } else {
+          window.addEventListener('lightbox:ready', pswp);
+        }
+      </script></div>
+</div><script
+    src="/resources/busuanzi@3.6.9/busuanzi.min.js"
+    
+    async
+    
+    
+    ></script><script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (let registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+  </script><script>
+  const reimuCopyright = String.raw`
+   ______     ______     __     __    __     __  __    
+  /\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+  \ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+   \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+    \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                    
+  `;
+  console.log(String.raw`%c ${reimuCopyright}`, "color: #ff5252;");
+  console.log(
+    "%c Theme.Reimu" + " %c https://github.com/D-Sketon/hugo-theme-reimu ",
+    "color: white; background: #ff5252; padding:5px 0;",
+    "padding:4px;border:1px solid #ff5252;",
+  );
+</script></body>
+</html>
